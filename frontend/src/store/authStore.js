@@ -6,4 +6,4 @@ const useAuthStore = create((set) => ({
   logout: () => set({ accessToken: null })
 }))
 
-export default useAuthStore
+export default useAuthStore;
