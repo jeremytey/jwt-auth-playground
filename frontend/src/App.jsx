@@ -1,10 +1,10 @@
 import './App.css'
-import api from '../api';
+import api from './api';
 import useAuthStore from './store/authStore';
 import LoginForm from './components/LoginForm';
 import Dashboard from './components/Dashboard';
 
-function App({onLogin, onLogout}) {
+function App() {
   const accessToken = useAuthStore((state) => state.accessToken);
 
   const handleLogin = async (email, password) => {
@@ -19,14 +19,9 @@ function App({onLogin, onLogout}) {
   };
 
 
-
-
-
-
-
   return(
    <div>JWT Auth Playground
-   {accessToken ? <Dashboard onLogout={onLogout} /> : <LoginForm onLogin={onLogin} />}
+   {accessToken ? <Dashboard onLogout={handleLogout} /> : <LoginForm onLogin={handleLogin} />}
 
 
   </div>
